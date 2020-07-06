@@ -1,8 +1,8 @@
 DESCRIPTION = "SqueezeOS DSP - Private code"
 LICENSE = "Confidential"
 
-PV = "${DISTRO_VERSION}+svnr${SRCREV}"
-PR = "r3"
+PV = "7.7.3"
+PR = "r16676"
 
 PROVIDES = "squeezeos-dsp"
 
@@ -11,17 +11,9 @@ DEPENDS += "alsa-lib"
 # no thumb here thanks!
 ARM_INSTRUCTION_SET = "arm"
 
-SRC_URI="${SQUEEZEOS_PRIVATE_SVN};module=squeezeos_dsp"
+SRC_URI="${NONFREE_ARTIFACTS_URI}/babydsp/babydsp-${PV}${PR}.tar.gz"
 
 S = "${WORKDIR}/squeezeos_dsp"
-
-inherit autotools
-
-do_configure_prepend() {
-	cd ${S}/openmax
-	tar -xzf openmax-arm-98665.tgz
-	cd ${S}
-}
 
 do_install() {
 	mkdir -p ${D}/${libdir}/alsa-lib

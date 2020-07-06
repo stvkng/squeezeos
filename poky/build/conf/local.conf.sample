@@ -199,3 +199,5 @@ ENABLE_BINARY_LOCALE_GENERATION = "1"
 
 # Set SVN to use --non-interactive to prevent hang failures
 ##FETCHCMD_svn = "/usr/bin/env svn --non-interactive"
+
+NONFREE_ARTIFACTS_URI = "http://artifacts.stvkng.com/non-free"
